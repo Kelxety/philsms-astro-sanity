@@ -1,5 +1,7 @@
 ---
 import clsx from "clsx";
+import GithubIcon from "./GithubIcon.astro";
+import SidebarToggle from "./SidebarToggle.astro";
 
 const { pathname } = Astro.url;
 const hasTrailing = pathname.endsWith("/");
@@ -68,21 +70,10 @@ const navbarLinks: Array<{ href: string; label: string }> = [
       </div>
     </div>
     <div class="flex flex-grow items-center justify-end gap-4">
-      <!-- <GithubIcon />
-      {!isLanding && <LanguageSelect language={langCode} client:load />}
-      <div
-        class={clsx("text-center", {
-          hidden: isLanding,
-        })}
-      >
-        <ThemeToggleButton />
-      </div>
+      <GithubIcon />
       <div class="block md:hidden">
         <SidebarToggle isLanding={isLanding} />
       </div>
-      <div class="hidden w-full max-w-xs rounded-lg md:block">
-        <Search isLanding={isLanding} client:load />
-      </div> -->
     </div>
   </div>
 </nav>
