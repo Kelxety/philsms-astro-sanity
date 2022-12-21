@@ -2,6 +2,7 @@
 import SEO from '../components/seo/SEO.astro';
 import Footer from "../components/footer/footer.astro";
 import Navbar from "../components/navigation/Navbar.astro";
+import { SITE } from "../config";
 
 export interface Props {
   isNotFound?: boolean;
@@ -16,9 +17,9 @@ const { isNotFound } = Astro.props;
 <html dir="ltr" lang="en-us" class={`initial ${isNotFound ? "not-found" : ""}`}>
   <head>
     <SEO 
-      title="PhilSMS landing page" 
-      descriptions="Reliable and affordable bulk sms. PhilSMS can help in enhancing communication and attracting new clients to your company. Whether you require OTP, transactional, or advisory SMS, we've got you covered!"
-      creator="Mobilicon, Inc"  
+      title={SITE.title} 
+      descriptions={SITE.description}
+      creator={SITE.author}  
     />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script is:inline>
