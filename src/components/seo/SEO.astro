@@ -1,0 +1,68 @@
+---
+import { SEO } from "astro-seo";
+
+export interface Props {
+  title: string;
+  descriptions: string;
+  creator: string;
+}
+
+const { title, descriptions, creator } = Astro.props;
+---
+
+<SEO
+  title={title}
+  description={descriptions}
+  twitter={{
+    creator: creator,
+  }}
+  extend={{
+    // extending the default link tags
+    link: [{ rel: "icon", href: "/favicon.ico" }],
+    // extending the default meta tags
+    meta: [
+      {
+        name: "twitter:image",
+        content: descriptions,
+      },
+      { name: title, content: descriptions },
+      { name: "twitter:description", content: "Agent" },
+      {
+        name: `description`,
+        content: descriptions,
+      },
+      {
+        property: `og:title`,
+        content: title,
+      },
+      {
+        property: `og:description`,
+        content: descriptions,
+      },
+      {
+        property: `og:type`,
+        content: `website`,
+      },
+      {
+        name: `twitter:card`,
+        content: `summary`,
+      },
+      {
+        name: `twitter:creator`,
+        content: creator,
+      },
+      {
+        name: `twitter:title`,
+        content: title,
+      },
+      {
+        name: `twitter:description`,
+        content: descriptions,
+      },
+      {
+        name: `keywords`,
+        content: `SMS API, VERIFY API, OTP, SENDER ID, Number Masking`,
+      },
+    ],
+  }}
+/>
