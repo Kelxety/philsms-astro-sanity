@@ -1,0 +1,21 @@
+---
+export type Props = {
+  title: string;
+  description: string;
+  imgSrc: string;
+}
+
+const { title, description, imgSrc } = Astro.props;
+
+---
+<section class="">
+  <div class="hover:bg-white/90 hover:text-black text-white hover:border-red-800 hover:border-2 hover:shadow-2xl hover:scale-105 w-full justify-center flex item-center h-[400px] md:h-[500px] lg:h-[500px] rounded-md flex-col shadow-md p-2 xl:p-8 bg-white/5 border">
+    <div class="flex flex-col items-center flex-1 p-2">
+      <img src={`/images/features/${imgSrc}`} width={100} height={100} class="hidden md:block"/>
+      <img src={`/images/features/${imgSrc}`} width={60} height={60} class="block md:hidden"/>
+      <h2 class="font-extrabold text-lg lg:text-2xl text-red-500 text-center">{title}</h2>
+      <p class="text-xs text-center  ">{description}</p>
+    </div>
+    <button class="flex items-center justify-center bg-red-500 rounded-md p-2 text-white w-2/3 mx-auto">See more</button>
+  </div>
+</section>
